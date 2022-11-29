@@ -1,0 +1,69 @@
+<span class="material-symbols-outlined close-icon pointer" mat-dialog-close>
+  close
+</span>
+<div class="container">
+  <img [src]="post.image" alt="" />
+  <div class="right-container">
+    <div class="user-info">
+      <img [src]="post.author.profilePicture" alt="" />
+      <h5>{{ post.author.fullname | titlecase }}</h5>
+      <span
+        *ngIf="post.author._id === currentUser._id"
+        class="material-icons pointer"
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+      >
+        more_horiz
+      </span>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="onDeletePost(post)">
+          <mat-icon>delete</mat-icon>
+          <span>Delete</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>edit</mat-icon>
+          <span>Edit</span>
+        </button>
+      </mat-menu>
+    </div>
+    <hr />
+    <div class="likes">
+      <mat-icon
+        class="material-icons icon like-icon pointer"
+        [ngClass]="isLikePost(post) ? 'liked' : ''"
+        (click)="onLikeClickAction(post)"
+        >favorite</mat-icon
+      >
+      <h5>{{ showLikes(post.likes) }}</h5>
+    </div>
+    <hr />
+    <div class="comments">
+      <div class="comment-input">
+        <input
+          [(ngModel)]="commentText"
+          type="text"
+          placeholder="Leave a comment
+        "
+          (keyup.enter)="submitComment()"
+        />
+
+        <mat-icon (click)="submitComment()" class="pointer"> comment</mat-icon>
+      </div>
+
+      <h4 *ngIf="post.comments.length === 0">No comments yet !</h4>
+      <div class="comment" *ngFor="let comment of post.comments">
+        <div class="comment-text">
+          <h5>{{ comment.author.username }} :</h5>
+          <p>{{ comment.text }}</p>
+        </div>
+        <span
+          *ngIf="canDelete(comment)"
+          class="material-symbols-outlined pointer delete-comment"
+          (click)="deleteComment(post, comment)"
+        >
+          delete
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

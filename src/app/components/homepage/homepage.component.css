@@ -1,0 +1,70 @@
+* {
+  margin: 0px;
+}
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+.body-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin-top: 2%;
+  margin-left: 10%;
+}
+.home-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin-top: 5%;
+  margin-left: 5%;
+  position: fixed;
+  right: 5%;
+  top: 20%;
+}
+.card-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+}
+.home-card > hr {
+  width: 70%;
+  margin-top: 2%;
+}
+.home-card > pre {
+  align-self: flex-start;
+  margin-left: 10%;
+  margin-top: 3%;
+}
+.card-info > img {
+  height: 15%;
+  width: 15%;
+  border-radius: 50%;
+}
+app-posts {
+  width: 65%;
+  margin-top: 2%;
+  border-radius: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+app-new-post {
+  width: 65%;
+}
+@media only screen and (max-width: 1100px) {
+  .home-card {
+    display: none;
+  }
+  .body-div {
+    width: 100%;
+    margin-left: 0%;
+  }
+}

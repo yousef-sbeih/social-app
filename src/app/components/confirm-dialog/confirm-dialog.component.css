@@ -1,0 +1,23 @@
+.buttons {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+  margin-top: 2%;
+}
+.buttons > button {
+  height: 80%;
+  width: 30%;
+  border: none;
+  outline: none;
+}
+.confirm {
+  background-color: transparent;
+  color: #669bbc;
+}
+.cancel {
+  background-color: transparent;
+  color: #c1121f;
+}

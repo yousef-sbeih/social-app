@@ -1,0 +1,35 @@
+<div class="nav-bar">
+  <img
+    src="https://a.top4top.io/p_24716gipi1.png"
+    alt=""
+    class="logo pointer"
+    (click)="onLogoClick()"
+  />
+  <div class="user-info pointer">
+    <img
+      [src]="currentUser.profilePicture"
+      alt=""
+      (click)="routingService.directToProfile(currentUser.username)"
+    />
+    <h3 (click)="routingService.directToProfile(currentUser.username)">
+      {{ currentUser.fullname | titlecase }}
+    </h3>
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <mat-icon class="pointer">menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>edit</mat-icon>
+        <span>Edit profile</span>
+      </button>
+      <button mat-menu-item class="menu-item" (click)="onLogout()">
+        <span class="material-symbols-outlined logout"> logout </span>
+        <span>logout</span>
+      </button>
+    </mat-menu>
+  </div>
+</div>

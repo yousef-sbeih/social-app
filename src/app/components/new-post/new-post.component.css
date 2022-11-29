@@ -1,0 +1,52 @@
+.new-post {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+  border: 1px solid black;
+  padding: 2%;
+  justify-content: center;
+  align-items: center;
+}
+.new-post > input {
+  width: 80%;
+  border: 0.1px solid black;
+  border-radius: 15px;
+  padding: 1%;
+}
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  display: flex;
+  flex-direction: row;
+}
+.waiting {
+  height: 15px;
+  font-size: calc(0.7vh + 0.7vw);
+}
+.waiting > p {
+  color: #003049;
+}
+.submit {
+  height: 30px;
+  border: none;
+  width: 25%;
+  background-color: #003049;
+  color: #fdf0d5;
+}
+.done {
+  margin-left: 3%;
+}
+h4 {
+  color: #003049;
+  margin-bottom: 2%;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4%;
+  gap: 8px;
+}

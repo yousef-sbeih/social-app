@@ -1,0 +1,113 @@
+.close-icon {
+  position: relative;
+  left: 95%;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 90%;
+}
+.container > img {
+  width: 50%;
+  height: 100%;
+}
+.right-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 8px;
+  margin-left: 3%;
+  border-left: 0.5px solid black;
+}
+.user-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 15%;
+  width: 100%;
+  gap: 2%;
+  pad: 6px;
+}
+.user-info > img {
+  width: 12%;
+  height: 80%;
+  border-radius: 50%;
+}
+.right-container > hr {
+  width: 100%;
+  margin-top: 3%;
+}
+.likes {
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+  margin-top: 3%;
+  width: 100%;
+  align-items: center;
+  height: 10%;
+}
+.comments {
+  width: 100%;
+  height: 65%;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+.comment-input {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.comment-input > input {
+  height: 100%;
+  width: 80%;
+  border: none;
+}
+.comment-input > mat-icon {
+  margin-left: 10%;
+}
+.comment-input > input:focus {
+  outline: none;
+}
+.comment {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5%;
+  border-bottom: 1px solid black;
+  padding: 8px;
+  margin-bottom: 1%;
+  justify-content: space-between;
+}
+.comment > p {
+  font-size: calc(0.7vw + 0.7vh);
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.delete-comment:hover {
+  color: brown;
+}
+.comment-text {
+  display: flex;
+  flex-direction: row;
+}
+@media only screen and (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .container > img {
+    width: 80%;
+    height: 60%;
+  }
+  .right-container {
+    width: 80%;
+  }
+}

@@ -1,0 +1,41 @@
+app-user-list {
+  width: 100%;
+}
+.users {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+  width: 100%;
+}
+.users > hr {
+  width: 120%;
+}
+.user-with-hr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin: 3%; */
+  width: 100%;
+}
+.user-with-hr > hr {
+  margin: 1%;
+  width: 120%;
+}
+.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2%;
+  width: 100%;
+}
+.user > h3 {
+  font-size: calc(0.7vh + 0.7vw);
+}
+.user > img {
+  height: 20%;
+  width: 20%;
+  border-radius: 50%;
+}

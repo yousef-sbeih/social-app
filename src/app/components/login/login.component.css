@@ -1,0 +1,88 @@
+* {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 10px;
+  width: 30%;
+  height: 80vh;
+  border: 3px solid #003049;
+  margin-top: 5%;
+}
+.logo {
+  width: 50%;
+  height: 20%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 50%;
+}
+.input-with-span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 35%;
+  width: 100%;
+}
+
+.input-with-span > input {
+  height: 70%;
+  width: 80%;
+}
+.input-with-span > span {
+  height: 20%;
+  font-size: 13px;
+  color: #c1121f;
+  align-self: flex-start;
+  margin-left: 10%;
+}
+
+form > input[type="submit"] {
+  background-color: #669bbc;
+  width: 83%;
+  height: 25%;
+  border: none;
+  color: #003049;
+  font-size: calc(1vw + 1vh);
+  padding: 8px;
+  cursor: pointer;
+}
+.nav-to-reset {
+  color: #003049;
+  font-size: 16px;
+}
+hr {
+  color: #003049;
+  width: 80%;
+}
+.reg-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+.sign-up {
+  color: #669bbc;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1150px) {
+  .form-container {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .form-container {
+    width: 60%;
+  }
+}

@@ -1,0 +1,45 @@
+<div class="form-container">
+  <img src="https://a.top4top.io/p_24716gipi1.png" class="logo" alt="" />
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="input-with-span">
+      <input
+        type="email"
+        name=""
+        id=""
+        placeholder="Email"
+        formControlName="email"
+        [ngStyle]="formService.addBorder('email')"
+      />
+      <span *ngIf="formService.validateInput('email')"
+        >Please enter a valid email</span
+      >
+    </div>
+    <div class="input-with-span">
+      <input
+        type="password"
+        name=""
+        id=""
+        placeholder="password"
+        formControlName="password"
+        [ngStyle]="formService.addBorder('password')"
+      />
+      <span *ngIf="formService.validateInput('password')"
+        >Password must be more than 8 charchters</span
+      >
+    </div>
+    <input
+      type="submit"
+      value="Login"
+      class="submit-button"
+      [disabled]="!formService.allInputsValid('email', 'password')"
+    />
+  </form>
+  <h3 class="nav-to-reset">Forget your password ?</h3>
+  <hr />
+  <div class="nav-to-reg-div">
+    <h3 class="reg-text">
+      Dont have an account?&nbsp;
+      <h3 class="sign-up" (click)="onSignup()">Sign Up</h3>
+    </h3>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="post-card" *ngFor="let post of posts">
+  <div class="card-header">
+    <div class="author-info">
+      <img
+        [src]="post.author.profilePicture"
+        alt=""
+        class="pointer"
+        (click)="routingService.directToProfile(post.author.username)"
+      />
+      <h3
+        class="pointer"
+        (click)="routingService.directToProfile(post.author.username)"
+      >
+        {{ post.author.fullname | titlecase }}
+      </h3>
+    </div>
+    <span
+      *ngIf="post.author._id === currentUser._id"
+      class="material-icons pointer"
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+    >
+      more_horiz
+    </span>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="onDeletePost(post)">
+        <mat-icon>delete</mat-icon>
+        <span>Delete</span>
+      </button>
+      <button mat-menu-item (click)="onEditPost(post)">
+        <mat-icon>edit</mat-icon>
+        <span>Edit</span>
+      </button>
+    </mat-menu>
+  </div>
+  <img
+    [src]="post.image"
+    alt=""
+    (click)="openPostDialog(post)"
+    class="pointer"
+  />
+  <div class="card-footer">
+    <div class="post-buttons">
+      <mat-icon
+        class="material-icons pointer like-icon"
+        [ngClass]="isLikePost(post) ? 'liked' : 'not-liked'"
+        (click)="onLikeClickAction(post)"
+        >favorite</mat-icon
+      >
+
+      <div class="likes">
+        <h5 class="pointer" (click)="openListDialog(post.likes)">
+          {{ showLikes(post.likes) }}
+        </h5>
+      </div>
+      <span class="material-icons icon" (click)="openPostDialog(post)">
+        chat_bubble_outline
+      </span>
+      <h3>{{ post.comments.length }}</h3>
+    </div>
+    <div class="post-text">
+      <p>
+        <b
+          class="pointer"
+          (click)="routingService.directToProfile(post.author.username)"
+          >{{ post.author.username }}|</b
+        >
+        {{ post.text }}
+      </p>
+    </div>
+  </div>
+</div>

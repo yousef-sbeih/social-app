@@ -1,0 +1,15 @@
+<h3 *ngIf="data.length <= 0">Nothing to show</h3>
+
+<div class="users">
+  <hr />
+  <div class="user-with-hr" *ngFor="let user of data">
+    <div
+      class="user pointer"
+      (click)="routingService.directToProfile(user.username)"
+    >
+      <img [src]="user.profilePicture" alt="" />
+      <h3>{{ user.fullname }}</h3>
+    </div>
+    <hr />
+  </div>
+</div>

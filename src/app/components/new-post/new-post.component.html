@@ -1,0 +1,24 @@
+<div class="new-post">
+  <h4>Share your moments!</h4>
+  <input type="text" placeholder="New post?" [(ngModel)]="postText" />
+  <div class="buttons">
+    <label for="file-upload" class="custom-file-upload pointer">
+      <span class="material-symbols-outlined">Image </span> Upload
+      <div *ngIf="isUploadFinished">
+        <span class="material-symbols-outlined"> done </span>
+      </div>
+    </label>
+    <input type="file" id="file-upload" (change)="onFileChanged($event)" />
+    <button
+      class="submit pointer"
+      [disabled]="!isUploadFinished"
+      (click)="onSubmit()"
+    >
+      Post!
+    </button>
+  </div>
+
+  <div class="waiting">
+    <p *ngIf="showUploadMessage">Waiting for the upload to complete ...</p>
+  </div>
+</div>

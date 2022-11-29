@@ -1,0 +1,129 @@
+<div class="form-container">
+  <img src="https://a.top4top.io/p_24716gipi1.png" class="logo" alt="" />
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div *ngIf="formStep === 1" class="form-inner-div">
+      <div class="input-with-span">
+        <input
+          type="string"
+          name=""
+          id=""
+          placeholder="Fullname"
+          formControlName="fullname"
+          [value]="formService.getInput('fullname')"
+          [ngStyle]="formService.addBorder('fullname')"
+        />
+        <span *ngIf="formService.validateInput('fullname')"
+          >fullname must be more than 6 charchters</span
+        >
+      </div>
+      <div class="input-with-span">
+        <input
+          type="email"
+          name=""
+          id=""
+          placeholder="Email"
+          formControlName="email"
+          [value]="formService.getInput('email')"
+          [ngStyle]="formService.addBorder('email')"
+        />
+        <span *ngIf="formService.validateInput('email')"
+          >Enter a valid Email
+        </span>
+      </div>
+
+      <div class="input-with-span">
+        <input
+          type="string"
+          name=""
+          id=""
+          placeholder="Username"
+          formControlName="username"
+          [value]="formService.getInput('username')"
+          [ngStyle]="formService.addBorder('username')"
+        /><span *ngIf="formService.validateInput('username')"
+          >Username must be more than 4 charchters</span
+        >
+      </div>
+    </div>
+
+    <div *ngIf="formStep === 2" class="form-inner-div">
+      <div class="input-with-span">
+        <input
+          type="password"
+          name=""
+          id=""
+          placeholder="Password"
+          formControlName="password"
+          [value]="formService.getInput('password')"
+          [ngStyle]="formService.addBorder('password')"
+        />
+        <span *ngIf="formService.validateInput('password')"
+          >password must be more than 8 charchters
+        </span>
+      </div>
+
+      <div class="input-with-span">
+        <textarea
+          name=""
+          id=""
+          cols="42"
+          rows="5"
+          placeholder="Description"
+          formControlName="description"
+          [value]="formService.getInput('description')"
+          [ngStyle]="formService.addBorder('description')"
+        ></textarea
+        ><span *ngIf="formService.validateInput('description')"
+          >description must be less than 100 charchters</span
+        >
+      </div>
+    </div>
+    <div *ngIf="formStep === 3" class="form-inner-div">
+      <label for="file-upload" class="custom-file-upload">
+        Upload your photo
+        <img [src]="uploadedImageUrl" alt="" />
+      </label>
+      <input id="file-upload" type="file" (change)="onFileChanged($event)" />
+    </div>
+    <div class="form-buttons">
+      <button
+        class="form-button"
+        (click)="onBackClick(); $event.preventDefault()"
+        [disabled]="formStep === minFormStep"
+      >
+        back
+      </button>
+      <button
+        *ngIf="formStep !== maxFormStep"
+        class="form-button"
+        (click)="onNextClick(); $event.preventDefault()"
+        [disabled]="isNextDisabled()"
+      >
+        next
+      </button>
+
+      <input
+        *ngIf="formStep === maxFormStep"
+        class="form-button"
+        type="submit"
+        [disabled]="!isUploadingFinished"
+        value="Register"
+      />
+
+      <div class="loader" *ngIf="showLoader"></div>
+    </div>
+  </form>
+  <div class="step-divs">
+    <div class="step-div" [ngClass]="formStep === 1 ? 'active' : ''">1</div>
+    <hr />
+    <div class="step-div" [ngClass]="formStep === 2 ? 'active' : ''">2</div>
+    <hr />
+    <div class="step-div" [ngClass]="formStep === 3 ? 'active' : ''">3</div>
+  </div>
+</div>
+<div class="nav-to-log-div">
+  <h3 class="log-text">
+    Have an account?&nbsp;
+    <h3 class="login" (click)="onLogin()">Login</h3>
+  </h3>
+</div>
