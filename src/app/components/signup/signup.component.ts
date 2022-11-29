@@ -28,8 +28,7 @@ export class SignupComponent implements OnInit {
     private storage: AngularFireStorage,
     private authService: AuthService,
     private router: RoutingService,
-    public formService: FormsService,
-    private snackBar: MatSnackBar
+    public formService: FormsService
   ) {}
 
   ngOnInit(): void {

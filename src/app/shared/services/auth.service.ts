@@ -9,6 +9,7 @@ import {
   User,
 } from '../interfaces/user.interface';
 import { RoutingService } from './routing.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root',
@@ -17,14 +18,20 @@ export class AuthService {
   USER_URL = 'https://social-platform-app.herokuapp.com/user';
   constructor(
     private httpClient: HttpClient,
-    private routingService: RoutingService
+    private routingService: RoutingService,
+    private snackBar: MatSnackBar
   ) {}
   signup(user: SignupUser) {
     return this.httpClient.post(`${this.USER_URL}/register`, user).pipe(
       take(1),
-      tap(() => {
-        this.routingService.directToLogin();
-      })
+      tap(
+        () => {
+          this.routingService.directToLogin();
+        },
+        (res) => {
+          this.snackBar.open(res.error.message, 'close', { duration: 3000 });
+        }
+      )
     );
   }
   login(user: LoginUser) {
