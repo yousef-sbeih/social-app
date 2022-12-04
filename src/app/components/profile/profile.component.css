@@ -17,6 +17,7 @@
   width: 14%;
   height: 60%;
   border-radius: 50%;
+  object-fit: cover;
 }
 .user-card-info {
   display: flex;
@@ -30,6 +31,9 @@
   align-items: center;
   gap: 3%;
   height: 10%;
+  border: 0.5px solid #003049;
+  width: 70%;
+  padding: 8px;
 }
 .more-info-with-button > button {
   width: 20%;
@@ -50,6 +54,7 @@
   height: 200px;
   cursor: pointer;
   margin: 2%;
+  object-fit: cover;
 }
 .follow {
   background-color: transparent;

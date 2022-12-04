@@ -29,7 +29,7 @@
       </button>
       <button mat-menu-item (click)="onEditPost(post)">
         <mat-icon>edit</mat-icon>
-        <span>Edit</span>
+        <span>Edit (coming soon)</span>
       </button>
     </mat-menu>
   </div>
@@ -53,7 +53,7 @@
           {{ showLikes(post.likes) }}
         </h5>
       </div>
-      <span class="material-icons icon" (click)="openPostDialog(post)">
+      <span class="material-icons icon pointer" (click)="openPostDialog(post)">
         chat_bubble_outline
       </span>
       <h3>{{ post.comments.length }}</h3>

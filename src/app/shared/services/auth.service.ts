@@ -15,7 +15,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providedIn: 'root',
 })
 export class AuthService {
-  USER_URL = 'https://social-platform-app.herokuapp.com/user';
+  USER_URL = 'https://social-server-dnj0.onrender.com/user';
   constructor(
     private httpClient: HttpClient,
     private routingService: RoutingService,

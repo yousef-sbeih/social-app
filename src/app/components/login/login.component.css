@@ -36,8 +36,13 @@ form {
 }
 
 .input-with-span > input {
-  height: 70%;
-  width: 80%;
+  height: 50%;
+  width: 76%;
+  padding: 8px;
+}
+.input-with-span > input::placeholder {
+  /* margin-left: 50%; */
+  padding: 8px;
 }
 .input-with-span > span {
   height: 20%;

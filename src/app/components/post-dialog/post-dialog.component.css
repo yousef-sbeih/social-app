@@ -10,6 +10,7 @@
 .container > img {
   width: 50%;
   height: 100%;
+  object-fit: cover;
 }
 .right-container {
   width: 50%;
@@ -36,6 +37,7 @@
   width: 12%;
   height: 80%;
   border-radius: 50%;
+  object-fit: cover;
 }
 .right-container > hr {
   width: 100%;

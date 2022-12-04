@@ -8,8 +8,8 @@ import { User } from '../interfaces/user.interface';
   providedIn: 'root',
 })
 export class ApiService {
-  USER_URL = 'https://social-platform-app.herokuapp.com/user';
-  POSTS_URL = 'https://social-platform-app.herokuapp.com/post';
+  USER_URL = 'https://social-server-dnj0.onrender.com/user';
+  POSTS_URL = 'https://social-server-dnj0.onrender.com/post';
   constructor(private httpClient: HttpClient) {}
   users(id?: string) {
     return {

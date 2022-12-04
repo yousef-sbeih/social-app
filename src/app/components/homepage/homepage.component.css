@@ -33,6 +33,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 2%;
+  object-fit: cover;
 }
 .home-card > hr {
   width: 70%;

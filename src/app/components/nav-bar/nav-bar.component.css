@@ -27,6 +27,7 @@
   height: calc(3vw + 4vh);
   width: calc(3vw + 4vh);
   border-radius: 60%;
+  object-fit: cover;
 }
 .user-info > h3 {
   font-size: calc(1vw + 0.5vh);
