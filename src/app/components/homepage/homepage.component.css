@@ -48,6 +48,7 @@ body {
   height: 15%;
   width: 15%;
   border-radius: 50%;
+  object-fit: cover;
 }
 app-posts {
   width: 65%;
