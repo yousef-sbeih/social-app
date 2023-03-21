@@ -15,7 +15,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providedIn: 'root',
 })
 export class AuthService {
-  USER_URL = 'https://social-server-dnj0.onrender.com/user';
+  USER_URL = 'http://localhost:3000/user';
   constructor(
     private httpClient: HttpClient,
     private routingService: RoutingService,

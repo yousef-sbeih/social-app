@@ -8,8 +8,8 @@ import { User } from '../interfaces/user.interface';
   providedIn: 'root',
 })
 export class ApiService {
-  USER_URL = 'https://social-server-dnj0.onrender.com/user';
-  POSTS_URL = 'https://social-server-dnj0.onrender.com/post';
+  USER_URL = 'http://localhost:3000/user';
+  POSTS_URL = 'http://localhost:3000/post';
   constructor(private httpClient: HttpClient) {}
   users(id?: string) {
     return {

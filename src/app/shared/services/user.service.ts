@@ -46,4 +46,12 @@ export class UserService {
   getFollowersIds(user: User): string[] {
     return user.followers.map((user) => user._id);
   }
+  //   getRandomUsers(users: User[]): User[] {
+  //     let randomNumbers = [];
+  //     while (randomNumbers.length < 3) {
+  //       const random = Math.floor(Math.random() * users.length);
+  //       randomNumbers.indexOf(random) === -1 ? randomNumbers.push(random) : null;
+  //     }
+  //     return users[randomNumbers];
+  //   }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -11,6 +12,11 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [FormsGuard] },
   { path: 'signup', component: SignupComponent, canActivate: [FormsGuard] },
   { path: ':username', component: ProfileComponent },
+  {
+    path: 'edit/:username',
+    component: EditProfileComponent,
+    canActivate: [AuthGuard],
+  },
   { path: '', component: HomepageComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' },
 ];

@@ -8,7 +8,7 @@ import { MaterialModule } from './material.module';
 import { NewPostComponent } from './components/new-post/new-post.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from 'src/environments/environment';
 import { HomepageComponent } from './components/homepage/homepage.component';
@@ -22,6 +22,8 @@ import { StoreModule } from '@ngrx/store';
 import { postReducer } from './shared/store/post.reducer';
 import { userReducer } from './shared/store/user.reducer';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { TokenInterceptorService } from './shared/services/interceptors/token-interceptor.service';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +37,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     UsersListComponent,
     PostDialogComponent,
     ConfirmDialogComponent,
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,13 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     BrowserAnimationsModule,
     StoreModule.forRoot({ posts: postReducer, user: userReducer }),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

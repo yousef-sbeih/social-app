@@ -23,4 +23,7 @@ export class NavBarComponent implements OnInit {
   onLogoClick() {
     this.routingService.directToHomepage();
   }
+  editProfileRoute() {
+    this.routingService.directToEditProfile(this.currentUser.username);
+  }
 }

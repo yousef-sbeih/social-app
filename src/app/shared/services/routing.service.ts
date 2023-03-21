@@ -18,4 +18,7 @@ export class RoutingService {
   directToProfile(username: string) {
     this.router.navigate(['', username]);
   }
+  directToEditProfile(username: string) {
+    this.router.navigate(['edit', username]);
+  }
 }
